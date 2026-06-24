@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Commercial Printing Capabilities in Kyiv | .BRAND</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --wrap: 1240px;
+  --pad: clamp(20px, 4vw, 56px);
+  --bg: #fff;
+  --ink: #080808;
+  --muted: rgba(0,0,0,.62);
+  --muted2: rgba(0,0,0,.42);
+  --line: rgba(0,0,0,.10);
+  --line2: rgba(0,0,0,.06);
+  --soft: rgba(0,0,0,.03);
+  --headerH: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+h1, h2, h3, h4, p { margin-top: 0; }
+
+h1 {
+  margin-bottom: 28px;
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: .97;
+  font-weight: 650;
+  letter-spacing: -.02em;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.05;
+  font-weight: 650;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* ── HEADER ───────────────────────────────────── */
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.headerRow {
+  height: var(--headerH);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.topNav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.topNav a {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.topNav a:hover { color: var(--ink); text-decoration: none; }
+.topNav a.isActive { color: var(--ink); text-decoration: underline; text-underline-offset: 7px; }
+.topNav a.navContact { color: var(--ink); font-weight: 600; }
+
+.headerTools { display: flex; align-items: center; gap: 14px; }
+
+.langSwitch {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted2);
+  font-size: 12px;
+}
+
+.langSwitch a { color: var(--muted); }
+.langSwitch a.isActive { color: var(--ink); font-weight: 650; }
+
+.menuBtn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menuBtn span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  margin: 5px auto;
+  background: var(--ink);
+}
+
+.mobileNav { background: rgba(255,255,255,.98); border-bottom: 1px solid var(--line); }
+.mobileNavInner { padding: 16px 0 20px; display: grid; gap: 10px; }
+.mobileNavInner a { font-size: 15px; color: var(--muted); }
+.mobileNavInner a.isActive { color: var(--ink); font-weight: 600; }
+.mobileLang { display: flex; gap: 8px; margin-top: 10px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted2); font-size: 12px; }
+
+/* ── HERO ───────────────────────────────────────── */
+.hero {
+  padding: clamp(64px, 8vw, 108px) 0 clamp(48px, 6vw, 76px);
+  border-bottom: 1px solid var(--line);
+}
+
+.kicker {
+  margin: 0 0 22px;
+  font-size: 11px;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.heroCopy {
+  max-width: 860px;
+  margin-top: 28px;
+}
+
+.heroCopy p {
+  margin-bottom: 0;
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.72;
+  color: var(--muted);
+}
+
+.factBlock {
+  list-style: none;
+  margin: clamp(34px, 4vw, 52px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.factBlock li {
+  padding: 16px 24px 16px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  border-right: 1px solid var(--line);
+}
+
+.factBlock li:last-child { border-right: 0; }
+.factBlock li:nth-child(n+5) { border-top: 1px solid var(--line); }
+
+/* ── CONTENT GRID ───────────────────────────────── */
+.content { padding: 0 0 clamp(72px, 8vw, 112px); }
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: clamp(40px, 5vw, 72px);
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: calc(var(--headerH) + 24px);
+  align-self: start;
+  padding-top: 44px;
+}
+
+.tocTitle {
+  margin-bottom: 14px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.tocLink {
+  display: block;
+  padding: 8px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted2);
+  text-decoration: none;
+  border-left: 1.5px solid transparent;
+  padding-left: 12px;
+  margin-left: -12px;
+  transition: color .15s, border-color .15s;
+}
+
+.tocLink:hover { color: var(--ink); }
+.tocLink.isCurrent { color: var(--ink); border-left-color: var(--ink); font-weight: 500; }
+
+.article { min-width: 0; }
+
+/* ── SECTION BASE ────────────────────────────────── */
+.sec {
+  padding: clamp(56px, 6vw, 80px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.sectionLabel {
+  margin: 0 0 18px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.secGrid {
+  display: grid;
+  grid-template-columns: minmax(240px, .72fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+.secText {
+  display: grid;
+  gap: 14px;
+}
+
+.secText p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* ── FACILITY ────────────────────────────────────── */
+.facilitySec .secGrid {
+  grid-template-columns: minmax(240px, .72fr) minmax(0, 1fr);
+}
+
+.subGrid {
+  display: grid;
+  gap: 28px;
+}
+
+.subGrid h3 {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.subGrid p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.72;
+  color: var(--muted);
+}
+
+.subGrid p + p { margin-top: 10px; }
+
+/* ── PRINTING TECHNOLOGIES ───────────────────────── */
+.technologyList {
+  margin-top: 52px;
+}
+
+.technology {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 28px;
+  padding: clamp(24px, 3vw, 36px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.technology:first-child { border-top: 0; padding-top: 0; }
+
+.techNum {
+  font-size: 11px;
+  color: var(--muted2);
+  letter-spacing: .05em;
+  padding-top: 4px;
+}
+
+.techRight { display: grid; gap: 16px; }
+
+.techMeta { display: grid; gap: 4px; }
+
+.techMeta h3 { font-size: 22px; margin-bottom: 0; }
+
+.techMeta .techSub {
+  font-size: 12px;
+  color: var(--muted2);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.techBody p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.72;
+  color: var(--muted);
+}
+
+.operationList {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+
+.operationList li {
+  padding: 7px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+  border-top: 1px solid var(--line2);
+}
+
+/* ── MATERIALS ───────────────────────────────────── */
+.materialList {
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.materialList li {
+  padding: 16px 0;
+  font-size: 15px;
+  color: rgba(0,0,0,.78);
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.materialList li:nth-child(3n) { border-right: 0; }
+
+/* ── FINISHING ───────────────────────────────────── */
+.capabilityGroups {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.capabilityGroup {
+  padding: 28px 28px 28px 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.capabilityGroup:nth-child(odd) { padding-left: 0; }
+.capabilityGroup:nth-child(even) { padding-left: 28px; border-right: 0; }
+
+.capabilityGroup h3 {
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.capabilityGroup ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.capabilityGroup li {
+  padding: 6px 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(0,0,0,.75);
+  border-top: 1px solid var(--line2);
+}
+
+.capabilityGroup li:first-child { border-top: 0; }
+
+/* ── BINDING — editorial index ───────────────────── */
+.bindingIndex {
+  margin-top: 52px;
+}
+
+.bindingRow {
+  display: grid;
+  grid-template-columns: 3rem 1fr 1fr auto;
+  align-items: start;
+  gap: 20px 28px;
+  padding: clamp(18px, 2vw, 26px) 0;
+  border-top: 1px solid var(--line);
+  cursor: default;
+}
+
+.bindingRow:last-child { border-bottom: 1px solid var(--line); }
+
+.bindingRow:hover { background: var(--soft); margin: 0 -24px; padding-left: 24px; padding-right: 24px; border-radius: 0; }
+
+.bindingRow.bLarge {
+  grid-template-columns: 3rem 1fr;
+  padding: clamp(26px, 3vw, 40px) 0;
+}
+
+.bNum {
+  font-size: 11px;
+  color: var(--muted2);
+  letter-spacing: .05em;
+  padding-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bName {
+  font-size: clamp(15px, 1.4vw, 17px);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.bindingRow.bLarge .bName {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  line-height: 1.0;
+  margin-bottom: 12px;
+}
+
+.bDesc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.bTag {
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  border: 1px solid var(--line);
+  padding: 4px 9px;
+  white-space: nowrap;
+  align-self: start;
+  margin-top: 2px;
+}
+
+.bLargeRight { display: flex; flex-direction: column; }
+
+/* ── DELIVERY ────────────────────────────────────── */
+.wideList {
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.wideList li {
+  padding: 16px 0;
+  font-size: 16px;
+  color: rgba(0,0,0,.78);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wideList li::after {
+  content: "→";
+  color: var(--muted2);
+  font-size: 14px;
+}
+
+/* ── WORKFLOW ────────────────────────────────────── */
+.workflowList {
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  counter-reset: workflow;
+}
+
+.workflowList li {
+  counter-increment: workflow;
+  display: grid;
+  grid-template-columns: 3rem 1fr 1.5rem;
+  gap: 20px;
+  align-items: center;
+  min-height: 64px;
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.3;
+}
+
+.workflowList li::before {
+  content: counter(workflow, decimal-leading-zero);
+  font-size: 11px;
+  color: var(--muted2);
+  letter-spacing: .05em;
+}
+
+.workflowList li::after {
+  content: "→";
+  color: var(--muted2);
+  font-size: 16px;
+}
+
+.workflowList li:last-child::after { content: ""; }
+
+/* ── CONTACT ─────────────────────────────────────── */
+.contactSec { padding-bottom: 0; }
+
+.contactPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .65fr);
+  gap: clamp(40px, 6vw, 80px);
+  padding: 44px 0 40px;
+  align-items: start;
+}
+
+.contactPanel h2 { margin-bottom: 18px; }
+.contactPanel p { margin: 0; font-size: 15px; line-height: 1.72; color: var(--muted); }
+.contactPanel p + p { margin-top: 12px; }
+
+.contactPrimary { display: grid; gap: 22px; }
+
+.contactLine { display: grid; gap: 6px; }
+
+.contactLine > span {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.contactLine a {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  display: block;
+}
+
+.contactLine p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.messengerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
+  margin-top: 6px;
+}
+
+.btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+
+.btn:hover { border-bottom-color: var(--ink); text-decoration: none; }
+
+.mapLink { font-size: 14px; font-weight: 500; color: var(--ink); }
+
+/* ── FOOTER ──────────────────────────────────────── */
+.footer {
+  margin-top: clamp(80px, 9vw, 130px);
+  border-top: 2px solid var(--ink);
+}
+
+.footerGrid {
+  padding-top: clamp(44px, 6vw, 72px);
+  padding-bottom: clamp(40px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: minmax(280px, 1.4fr) minmax(140px, .65fr) minmax(200px, .85fr) minmax(140px, .6fr);
+  gap: clamp(30px, 4vw, 64px);
+  align-items: start;
+}
+
+.footerBrand .brand { font-size: 26px; }
+.footerBrand > p { margin: 16px 0 0; font-size: 15px; line-height: 1.5; color: var(--muted); max-width: 300px; }
+
+.footerMeta { margin-top: 30px; }
+.footerMeta + .footerMeta { margin-top: 20px; }
+
+.footerMeta h2 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.footerMeta p, .footerMeta a {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footerMeta a { display: inline-block; margin-top: 6px; color: var(--ink); font-weight: 600; }
+
+.footerCol { display: grid; align-content: start; gap: 9px; }
+
+.footerCol h2 {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.footerCol a { font-size: 14px; color: var(--muted); text-decoration: none; }
+.footerCol a:hover { color: var(--ink); }
+
+.footerLang {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted2);
+}
+
+.footerLang a { color: var(--muted); }
+.footerLang a[aria-current="true"] { color: var(--ink); font-weight: 650; }
+
+.footerBottom {
+  padding: 20px 0 28px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--muted2);
+}
+
+.footerLink { color: var(--muted2); text-decoration: none; }
+.footerLink:hover { color: var(--ink); }
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 1080px) {
+  .contentGrid { grid-template-columns: 1fr; gap: 0; }
+  .toc {
+    position: static;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .tocTitle { flex: 0 0 100%; margin-bottom: 6px; }
+  .tocLink { border-left: 0; padding-left: 0; margin-left: 0; }
+  .secGrid { grid-template-columns: 1fr; gap: 20px; }
+  .contactPanel { grid-template-columns: 1fr; }
+  .footerGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .factBlock { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .operationList { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bindingRow { grid-template-columns: 3rem 1fr 1fr; }
+  .bTag { display: none; }
+}
+
+@media (max-width: 720px) {
+  :root { --headerH: 64px; }
+  .topNav { display: none; }
+  .menuBtn { display: block; }
+  .hero { padding: 52px 0 40px; }
+  .factBlock { grid-template-columns: 1fr; }
+  .factBlock li { border-right: 0; }
+  .factBlock li:nth-child(n+2) { border-top: 1px solid var(--line); }
+  .sec { padding: 52px 0; }
+  .capabilityGroups { grid-template-columns: 1fr; border-left: 0; }
+  .capabilityGroup { padding: 20px 0 !important; border-right: 0; }
+  .materialList { grid-template-columns: 1fr; }
+  .materialList li { border-right: 0; }
+  .operationList { grid-template-columns: 1fr; }
+  .technology { grid-template-columns: 2rem minmax(0, 1fr); }
+  .bindingRow { grid-template-columns: 2.5rem minmax(0, 1fr); }
+  .bindingRow.bLarge .bName { font-size: 26px; }
+  .workflowList li { grid-template-columns: 2.5rem 1fr 1rem; font-size: 15px; }
+  .footerGrid { grid-template-columns: 1fr; }
+  .footerBottom { flex-direction: column; align-items: flex-start; }
+  .contactPanel { gap: 28px; }
+  .messengerLinks { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<header class="siteHeader" id="siteHeader">
+  <div class="wrap headerRow">
+    <a class="brand" href="/en/" aria-label=".BRAND">.BRAND</a>
+
+    <nav class="topNav" aria-label="Main navigation">
+      <a href="/en/">Home</a>
+      <a class="isActive" href="/brand/en/capabilities.html">Capabilities</a>
+      <a href="#">Products</a>
+      <a href="#">Insights</a>
+      <a href="#">About</a>
+      <a class="navContact" href="#contact">Contact →</a>
+    </nav>
+
+    <div class="headerTools">
+      <nav class="langSwitch" aria-label="Language switch">
+        <a href="/brand/capabilities.html" hreflang="uk">UA</a>
+        <span>|</span>
+        <a class="isActive" href="/brand/en/capabilities.html" hreflang="en" aria-current="true">EN</a>
+      </nav>
+      <button class="menuBtn" type="button" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobileNav" id="mobileNav" hidden>
+    <div class="wrap mobileNavInner">
+      <a href="/en/">Home</a>
+      <a class="isActive" href="/brand/en/capabilities.html">Capabilities</a>
+      <a href="#">Products</a>
+      <a href="#">Insights</a>
+      <a href="#">About</a>
+      <a class="navContact" href="#contact">Contact →</a>
+      <div class="mobileLang">
+        <a href="/brand/capabilities.html" hreflang="uk">UA</a>
+        <span>|</span>
+        <a class="isActive" href="/brand/en/capabilities.html" hreflang="en">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Production Capabilities</p>
+      <h1>Commercial Printing &amp;<br>Production Capabilities</h1>
+      <div class="heroCopy">
+        <p>In-house open-space production combining digital, offset and UV printing, print finishing, bookbinding, packing and delivery. Labels, packaging, books, catalogs, notebooks, branded merchandise and more. From short runs of 20 pieces to production runs of 1,000+.</p>
+      </div>
+
+      <ul class="factBlock" aria-label="Production facts">
+        <li>Kyiv, Ukraine</li>
+        <li>Open-space Production</li>
+        <li>White Ink &amp; Pantone Printing</li>
+        <li>Quality Control &amp; Delivery</li>
+        <li>Digital, Offset &amp; UV Print Technologies</li>
+        <li>Friendly Team &amp; Coffee :)</li>
+        <li>Print Finishing &amp; Bookbinding</li>
+        <li>Generator Backup During Power Outages</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="wrap contentGrid">
+      <aside class="toc" aria-label="Page navigation">
+        <div class="tocTitle">Sections</div>
+        <a class="tocLink" href="#facility" data-section="facility">Production space</a>
+        <a class="tocLink" href="#printing" data-section="printing">Printing technologies</a>
+        <a class="tocLink" href="#materials" data-section="materials">Materials</a>
+        <a class="tocLink" href="#finishing" data-section="finishing">Finishing</a>
+        <a class="tocLink" href="#binding" data-section="binding">Binding</a>
+        <a class="tocLink" href="#logistics" data-section="logistics">Delivery</a>
+        <a class="tocLink" href="#workflow" data-section="workflow">Workflow</a>
+        <a class="tocLink" href="#contact" data-section="contact">Contact</a>
+      </aside>
+
+      <article class="article">
+
+        <!-- 01 Production Space -->
+        <section class="sec facilitySec" id="facility">
+          <div class="sectionLabel">01 / Production Space</div>
+          <div class="secGrid">
+            <div>
+              <h2>Production Space</h2>
+            </div>
+            <div class="subGrid">
+              <div>
+                <h3>Open-space Production</h3>
+                <p>Office and production work side by side within one connected space.</p>
+                <p>Materials, equipment and ongoing work remain visible throughout the production environment and through the large storefront windows facing the street. We like keeping the process open and easy to understand.</p>
+              </div>
+              <div>
+                <h3>People Behind the Process</h3>
+                <p>Behind the equipment is a team that genuinely enjoys what they do.</p>
+                <p>Many of us have spent years working with paper, materials and production, learning through real projects and discovering better ways to make things.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 02 Printing Technologies -->
+        <section class="sec" id="printing">
+          <div class="sectionLabel">02 / Print</div>
+          <div class="secGrid">
+            <div>
+              <h2>Printing Technologies</h2>
+            </div>
+            <div class="secText">
+              <p>The printing method is selected by run size, material, colour requirements and the finishing that follows.</p>
+            </div>
+          </div>
+
+          <div class="technologyList">
+            <div class="technology">
+              <div class="techNum">01</div>
+              <div class="techRight">
+                <div class="techMeta">
+                  <h3>Digital Printing</h3>
+                  <span class="techSub">CMYK / White Ink</span>
+                </div>
+                <div class="techBody">
+                  <p>For short and medium runs, personalisation and fast turnaround. White Ink is used on transparent, dark or coloured materials when CMYK alone is not enough.</p>
+                  <ul class="operationList">
+                    <li>Notebooks</li>
+                    <li>Planners</li>
+                    <li>Stickers</li>
+                    <li>Labels</li>
+                    <li>Catalogs</li>
+                    <li>Brochures</li>
+                    <li>Paper bags</li>
+                    <li>Branded packaging</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="technology">
+              <div class="techNum">02</div>
+              <div class="techRight">
+                <div class="techMeta">
+                  <h3>Offset Printing</h3>
+                  <span class="techSub">CMYK / Pantone / Spot Colours</span>
+                </div>
+                <div class="techBody">
+                  <p>For stable repeat runs and larger quantities where colour consistency and cost per unit matter.</p>
+                  <ul class="operationList">
+                    <li>Books</li>
+                    <li>Planners</li>
+                    <li>Catalogs</li>
+                    <li>Brochures</li>
+                    <li>Annual reports</li>
+                    <li>Packaging</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="technology">
+              <div class="techNum">03</div>
+              <div class="techRight">
+                <div class="techMeta">
+                  <h3>UV Printing</h3>
+                  <span class="techSub">Promotional / Acrylic / White Ink / Spot Varnish</span>
+                </div>
+                <div class="techBody">
+                  <p>Direct UV printing for promotional products and rigid materials: pens, power banks, bottles, thermoses, acrylic signs and small branded objects.</p>
+                  <ul class="operationList">
+                    <li>Pens</li>
+                    <li>Power banks</li>
+                    <li>Tumblers</li>
+                    <li>Thermal bottles</li>
+                    <li>Thermoses</li>
+                    <li>Acrylic signs</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 03 Materials -->
+        <section class="sec" id="materials">
+          <div class="sectionLabel">03 / Materials</div>
+          <div class="secGrid">
+            <div>
+              <h2>Materials</h2>
+            </div>
+            <div class="secText">
+              <p>The same design can look completely different depending on the material.</p>
+              <p>We keep commonly used papers, boards and self-adhesive materials in stock for fast turnaround. Additional materials can be sourced for specific colours, textures, formats and finishing requirements.</p>
+              <p>Material selection is part of the production process — based on the product, budget, timeline and the way the finished piece needs to look and feel.</p>
+            </div>
+          </div>
+
+          <ul class="materialList" aria-label="Material overview">
+            <li>Coated Papers</li>
+            <li>Uncoated Papers</li>
+            <li>Fine Papers</li>
+            <li>Boards</li>
+            <li>Self-Adhesive Materials</li>
+            <li>Cover Materials</li>
+          </ul>
+        </section>
+
+        <!-- 04 Finishing -->
+        <section class="sec" id="finishing">
+          <div class="sectionLabel">04 / Finishing</div>
+          <div class="secGrid">
+            <div>
+              <h2>Finishing &amp; Special Effects</h2>
+            </div>
+            <div class="secText">
+              <p>Finishing is planned before printing because it affects material choice, layout, pressure, mounting and assembly sequence.</p>
+            </div>
+          </div>
+
+          <div class="capabilityGroups">
+            <div class="capabilityGroup">
+              <h3>Surface Finishing</h3>
+              <ul>
+                <li>Matte Lamination</li>
+                <li>Gloss Lamination</li>
+                <li>Soft-touch Lamination</li>
+                <li>Anti-scuff Lamination</li>
+                <li>Holographic Lamination</li>
+                <li>Spot UV Varnish</li>
+                <li>Raised UV Varnish</li>
+                <li>Epoxy Dome Coating</li>
+              </ul>
+            </div>
+            <div class="capabilityGroup">
+              <h3>Foil Stamping &amp; Relief</h3>
+              <ul>
+                <li>Foil Stamping</li>
+                <li>Metallic Foils</li>
+                <li>Coloured Foils</li>
+                <li>Holographic Foils</li>
+                <li>Embossing</li>
+                <li>Debossing</li>
+                <li>Foil + Emboss</li>
+                <li>Foil + Deboss</li>
+              </ul>
+            </div>
+            <div class="capabilityGroup">
+              <h3>Converting &amp; Cutting</h3>
+              <ul>
+                <li>Die-cutting</li>
+                <li>Plotter Cutting</li>
+                <li>Laser Cutting</li>
+                <li>Corner Rounding</li>
+                <li>Hole Drilling</li>
+                <li>Perforation</li>
+              </ul>
+            </div>
+            <div class="capabilityGroup">
+              <h3>Assembly &amp; Construction</h3>
+              <ul>
+                <li>Duplexing</li>
+                <li>Triplex Mounting</li>
+                <li>Scoring</li>
+                <li>Creasing</li>
+                <li>Folding</li>
+                <li>Grooving</li>
+                <li>Hand Assembly</li>
+                <li>Packaging Assembly</li>
+                <li>Paper Bag Assembly</li>
+                <li>Box Assembly</li>
+                <li>Envelope Assembly</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 Binding — editorial index -->
+        <section class="sec" id="binding">
+          <div class="sectionLabel">05 / Binding</div>
+          <div class="secGrid">
+            <div>
+              <h2>Binding Methods</h2>
+            </div>
+            <div class="secText">
+              <p>The binding method affects how a product opens, feels in use and performs over time.</p>
+              <p>Different formats, page counts and use cases require different binding solutions.</p>
+            </div>
+          </div>
+
+          <div class="bindingIndex" aria-label="Binding methods">
+
+            <div class="bindingRow bLarge">
+              <div class="bNum">01</div>
+              <div class="bLargeRight">
+                <div class="bName">Saddle Stitching</div>
+                <div class="bDesc">Wire staples through the spine fold. Optimal for 8–80 pages. Lays flat when open, highly cost-effective at volume.</div>
+                <div class="bTag" style="margin-top:14px">Booklets · Catalogues</div>
+              </div>
+            </div>
+
+            <div class="bindingRow">
+              <div class="bNum">02</div>
+              <div class="bName">Perfect Binding</div>
+              <div class="bDesc">Signatures glued to a square spine. Standard for paperbacks and magazines above 80 pages.</div>
+              <div class="bTag">Paperbacks</div>
+            </div>
+
+            <div class="bindingRow">
+              <div class="bNum">03</div>
+              <div class="bName">Case Binding</div>
+              <div class="bDesc">Sewn or glued blocks attached to a rigid hardcover. The benchmark for permanence and craft.</div>
+              <div class="bTag">Hardcovers</div>
+            </div>
+
+            <div class="bindingRow bLarge">
+              <div class="bNum">04</div>
+              <div class="bLargeRight">
+                <div class="bName">Wire-O Binding</div>
+                <div class="bDesc">Double-loop wire through punched holes. Rotates 360° and opens completely flat — preferred for notebooks and reference documents that must stay open hands-free.</div>
+                <div class="bTag" style="margin-top:14px">Notebooks · Reference</div>
+              </div>
+            </div>
+
+            <div class="bindingRow">
+              <div class="bNum">05</div>
+              <div class="bName">PUR Binding</div>
+              <div class="bDesc">Polyurethane reactive adhesive. Superior flex and heat resistance versus standard hotmelt.</div>
+              <div class="bTag">High-durability</div>
+            </div>
+
+            <div class="bindingRow">
+              <div class="bNum">06</div>
+              <div class="bName">Bolt Binding</div>
+              <div class="bDesc">Metal screws through punched stock. Pages can be added or removed without rebinding.</div>
+              <div class="bTag">Portfolios · Loose-leaf</div>
+            </div>
+
+            <div class="bindingRow">
+              <div class="bNum">07</div>
+              <div class="bName">Thread Sewing</div>
+              <div class="bDesc">Signatures sewn with thread before casing. Maximum durability — used for museum-quality and archival editions.</div>
+              <div class="bTag">Archival · Fine editions</div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 06 Delivery -->
+        <section class="sec" id="logistics">
+          <div class="sectionLabel">06 / Delivery</div>
+          <div class="secGrid">
+            <div>
+              <h2>Delivery</h2>
+            </div>
+            <div class="secText">
+              <p>Not every order is delivered to a single address.</p>
+              <p>Products can be packed, grouped and distributed across multiple recipients, offices, stores, event locations or project teams.</p>
+            </div>
+          </div>
+
+          <ul class="wideList">
+            <li>Individual Packing</li>
+            <li>Split Deliveries</li>
+            <li>Multi-Address Distribution</li>
+            <li>Protective Packaging</li>
+            <li>Shipment Preparation</li>
+          </ul>
+        </section>
+
+        <!-- 07 Workflow -->
+        <section class="sec" id="workflow">
+          <div class="sectionLabel">07 / Workflow</div>
+          <div class="secGrid">
+            <div>
+              <h2>From Artwork to Delivery</h2>
+            </div>
+            <div class="secText">
+              <p>Every order moves through a series of production stages — from artwork review and material selection to printing, finishing, quality control and delivery.</p>
+            </div>
+          </div>
+
+          <ol class="workflowList" aria-label="Production workflow steps">
+            <li>Artwork Check</li>
+            <li>Material Selection</li>
+            <li>Production Planning</li>
+            <li>Proofing &amp; Samples</li>
+            <li>Printing</li>
+            <li>Finishing &amp; Binding</li>
+            <li>Quality Control</li>
+            <li>Packing &amp; Delivery</li>
+          </ol>
+        </section>
+
+        <!-- 08 Contact -->
+        <section class="sec contactSec" id="contact">
+          <div class="sectionLabel">08 / Contact</div>
+          <div class="contactPanel">
+            <div>
+              <h2>What Would You Like to Produce?</h2>
+              <p>Send an email with your artwork, specifications or a short description of what you need.</p>
+              <p>We can discuss materials, printing methods, finishing options, quantities and delivery before production starts.</p>
+            </div>
+
+            <div class="contactPrimary">
+              <div class="contactLine">
+                <span>Email</span>
+                <a href="mailto:hello@bph.com.ua">hello@bph.com.ua</a>
+              </div>
+              <div class="contactLine">
+                <span>Phones</span>
+                <a href="tel:+380443907280">+380 (44) 390 72 80</a>
+                <a href="tel:+380933907280">+380 (93) 390 72 80</a>
+              </div>
+              <div class="contactLine">
+                <span>Actions</span>
+                <div class="messengerLinks">
+                  <a class="btn" href="mailto:hello@bph.com.ua">Email</a>
+                  <a class="btn" href="https://t.me/branddruk2" target="_blank" rel="noopener">Telegram</a>
+                  <a class="btn" href="https://wa.me/380933907280" target="_blank" rel="noopener">WhatsApp</a>
+                  <a class="btn" href="tel:+380443907280">Call</a>
+                </div>
+              </div>
+              <div class="contactLine">
+                <span>Address</span>
+                <p>50A Mashynobudivna St.<br>Kyiv, Ukraine</p>
+                <a class="mapLink" href="https://goo.gl/maps/dHBxUJ5NEVW2axsu9" target="_blank" rel="noopener">Open in Google Maps →</a>
+              </div>
+              <div class="contactLine">
+                <span>Hours</span>
+                <p>Monday–Friday<br>09:00–18:00</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footerGrid">
+      <div class="footerBrand">
+        <a class="brand" href="/en/">.BRAND</a>
+        <p>Printing for business and creative people.</p>
+        <div class="footerMeta">
+          <h2>Address</h2>
+          <p>50A Mashynobudivna St.<br>Kyiv, Ukraine</p>
+          <a href="https://goo.gl/maps/dHBxUJ5NEVW2axsu9" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </div>
+        <div class="footerMeta">
+          <h2>Hours</h2>
+          <p>Monday–Friday<br>09:00–18:00</p>
+        </div>
+      </div>
+
+      <nav class="footerCol" aria-label="Footer navigation">
+        <h2>Navigation</h2>
+        <a href="/brand/en/capabilities.html">Capabilities</a>
+        <a href="#">Products</a>
+        <a href="#">Insights</a>
+        <a href="#">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footerCol">
+        <h2>Contact</h2>
+        <a href="mailto:hello@bph.com.ua">hello@bph.com.ua</a>
+        <a href="tel:+380443907280">+380 (44) 390 72 80</a>
+        <a href="tel:+380933907280">+380 (93) 390 72 80</a>
+        <a href="https://t.me/branddruk2" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/380933907280" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <div class="footerCol">
+        <h2>Follow us</h2>
+        <a href="https://www.instagram.com/branddruk/" target="_blank" rel="noopener">Instagram</a>
+        <div class="footerLang" aria-label="Language switch">
+          <a href="https://bph.com.ua/brand/capabilities.html" hreflang="uk">UA</a>
+          <span>|</span>
+          <a href="https://bph.com.ua/brand/en/capabilities.html" hreflang="en" aria-current="true">EN</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap footerBottom">
+      <div>© 2003–2026 .BRAND Commercial Printing &amp; Production Kyiv, Ukraine</div>
+      <a class="footerLink" href="#top" data-to-top>Back to top</a>
+    </div>
+  </footer>
+</main>
+
+<script>
+(() => {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+  if (location.hash && location.hash !== "#contact") {
+    history.replaceState(null, "", location.pathname + location.search);
+    window.scrollTo(0, 0);
+  }
+
+  const header = document.getElementById("siteHeader");
+
+  const btn = document.querySelector(".menuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  if (btn && mobileNav) {
+    btn.addEventListener("click", () => {
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      mobileNav.hidden = isOpen;
+    });
+    mobileNav.addEventListener("click", e => {
+      if (e.target.closest("a")) { btn.setAttribute("aria-expanded", "false"); mobileNav.hidden = true; }
+    });
+  }
+
+  const headerOffset = () => header ? header.getBoundingClientRect().height + 16 : 88;
+
+  const scrollToHash = hash => {
+    if (!hash || hash === "#") return;
+    const el = document.querySelector(hash);
+    if (!el) return;
+    window.scrollTo({ top: window.scrollY + el.getBoundingClientRect().top - headerOffset(), behavior: "smooth" });
+  };
+
+  document.addEventListener("click", e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const href = a.getAttribute("href");
+    if (!href || href === "#") return;
+    if (a.hasAttribute("data-to-top")) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+    if (document.querySelector(href)) { e.preventDefault(); scrollToHash(href); }
+  });
+
+  const tocLinks = Array.from(document.querySelectorAll(".tocLink[data-section]"));
+  const sections = tocLinks.map(a => document.getElementById(a.dataset.section)).filter(Boolean);
+
+  const setCurrent = id => tocLinks.forEach(a => a.classList.toggle("isCurrent", a.dataset.section === id));
+
+  if (sections.length) {
+    let ticking = false;
+    const update = () => {
+      const offset = headerOffset() + 24;
+      let current = sections[0].id;
+      sections.forEach(sec => { if (sec.getBoundingClientRect().top - offset <= 0) current = sec.id; });
+      setCurrent(current);
+      ticking = false;
+    };
+    window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
+  window.addEventListener("load", () => {
+    if (!location.hash || location.hash !== "#contact") return;
+    const hash = location.hash;
+    window.scrollTo(0, 0);
+    setTimeout(() => scrollToHash(hash), 0);
+  });
+})();
+</script>
+</body>
+</html>
