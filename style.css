@@ -211,7 +211,7 @@ h1{
   font-size:15px;
   line-height:1.4;
   border-top:0;
-  border-bottom:0;
+  border-bottom:1px solid var(--line-soft);
 }
 .factBlock li::before,
 .specList li::before{
