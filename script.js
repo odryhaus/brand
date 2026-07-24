@@ -73,7 +73,6 @@
     });
   
     // TOC active section highlight
-    const toc = document.querySelector(".toc");
     const tocLinks = Array.from(document.querySelectorAll(".tocLink[data-section]"));
     const sections = tocLinks
       .map(a => document.getElementById(a.dataset.section))
@@ -81,10 +80,6 @@
   
     const setCurrent = (id) => {
       tocLinks.forEach(a => a.classList.toggle("isCurrent", a.dataset.section === id));
-      if (toc) {
-        const currentSection = document.getElementById(id);
-        toc.classList.toggle("isOnInverse", Boolean(currentSection?.classList.contains("secInverse")));
-      }
     };
   
     if (sections.length) {
@@ -98,8 +93,6 @@
 
         const offset = headerOffset() + 24;
         let current = sections[0].id;
-        const firstSectionTop = sections[0].getBoundingClientRect().top - offset;
-        if (toc) toc.classList.toggle("isVisible", firstSectionTop <= 0);
 
         sections.forEach((sec) => {
           if (sec.getBoundingClientRect().top - offset <= 0) {
