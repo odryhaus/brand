@@ -3,13 +3,9 @@
       history.scrollRestoration = "manual";
     }
 
-    if (location.hash && location.hash !== "#contact") {
-      history.replaceState(null, "", location.pathname + location.search);
-      window.scrollTo(0, 0);
-    }
-
     const header = document.getElementById("siteHeader");
     const progress = document.querySelector("[data-progress]");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const yearNow = document.getElementById("yearNow");
     if (yearNow) yearNow.textContent = String(new Date().getFullYear());
 
@@ -49,7 +45,7 @@
       if (!el) return;
   
       const top = window.scrollY + el.getBoundingClientRect().top - headerOffset();
-      window.scrollTo({ top, behavior: "smooth" });
+      window.scrollTo({ top, behavior: prefersReducedMotion ? "auto" : "smooth" });
     };
   
     document.addEventListener("click", (e) => {
@@ -62,7 +58,7 @@
       // Back to top
       if (a.hasAttribute("data-to-top")) {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
         return;
       }
   
@@ -79,16 +75,61 @@
       .filter(Boolean);
   
     const setCurrent = (id) => {
-      tocLinks.forEach(a => a.classList.toggle("isCurrent", a.dataset.section === id));
+      tocLinks.forEach((a) => {
+        const active = a.dataset.section === id;
+        a.classList.toggle("isCurrent", active);
+        if (active) {
+          a.setAttribute("aria-current", "location");
+        } else {
+          a.removeAttribute("aria-current");
+        }
+      });
     };
   
     if (sections.length) {
+      if ("IntersectionObserver" in window) {
+        const visibleSections = new Map();
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              visibleSections.set(entry.target.id, entry.intersectionRatio);
+            } else {
+              visibleSections.delete(entry.target.id);
+            }
+          });
+
+          if (!visibleSections.size) return;
+
+          let current = sections[0].id;
+          let bestScore = -1;
+          sections.forEach((sec) => {
+            const score = visibleSections.get(sec.id) || 0;
+            if (score > bestScore) {
+              bestScore = score;
+              current = sec.id;
+            }
+          });
+
+          setCurrent(current);
+        }, {
+          rootMargin: `-${Math.round(headerOffset())}px 0px -55% 0px`,
+          threshold: [0, .12, .25, .5, .75]
+        });
+
+        sections.forEach((sec) => observer.observe(sec));
+      }
+
       let ticking = false;
 
       const updateCurrentSection = () => {
         if (progress) {
           const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
           progress.style.width = `${Math.min(100, (window.scrollY / max) * 100)}%`;
+        }
+
+        if ("IntersectionObserver" in window) {
+          ticking = false;
+          return;
         }
 
         const offset = headerOffset() + 24;
@@ -123,11 +164,18 @@
       updateProgress();
     }
   
-    // If page loads with hash — scroll with offset
-    window.addEventListener("load", () => {
-      if (!location.hash || location.hash !== "#contact") return;
+    const handleInitialHash = () => {
+      if (!location.hash) return;
       const hash = location.hash;
-      window.scrollTo(0, 0);
-      setTimeout(() => scrollToHash(hash), 0);
-    });
+      window.scrollTo({ top: 0, behavior: "auto" });
+      setTimeout(() => scrollToHash(hash), 80);
+      setTimeout(() => scrollToHash(hash), 320);
+    };
+
+    // If page loads with hash — scroll with offset
+    if (document.readyState === "complete") {
+      handleInitialHash();
+    } else {
+      window.addEventListener("load", handleInitialHash, { once: true });
+    }
   })();
