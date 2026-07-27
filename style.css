@@ -234,35 +234,16 @@ h1{
   gap:clamp(16px,2vw,28px);
 }
 .mediaGrid .figure{margin:0}
-.placeholder{
-  aspect-ratio:16/9;
-  border:1px solid rgba(22,20,15,.10);
-  background:repeating-linear-gradient(135deg,rgba(22,20,15,.055) 0 14px,transparent 14px 28px);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:13px;
-  padding:24px;
-  text-align:center;
+.productionImage{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:var(--image-ratio,16/9);
+  object-fit:cover;
+  background:rgba(22,20,15,.06);
 }
-.placeholder.photo{aspect-ratio:4/3}
-.placeholderTag{
-  font-family:var(--font-mono);
-  font-size:11px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:rgba(22,20,15,.6);
-  border:1px solid rgba(22,20,15,.18);
-  border-radius:999px;
-  padding:6px 15px;
-}
-.placeholderSpec{
-  font-family:var(--font-mono);
-  font-size:11px;
-  letter-spacing:.08em;
-  color:var(--ink-label);
-}
+.productionImage.photo{--image-ratio:4/3}
+.technology .productionImage{--image-ratio:3/4}
 .figureCaption{
   margin-top:12px;
   font-family:var(--font-mono);
@@ -437,7 +418,7 @@ h3{
 .technology .figure{
   margin-top:clamp(6px,.7vw,10px);
 }
-.technology .placeholder.photo{
+.technology .productionImage{
   width:100%;
 }
 .technologyLayout > div:last-child{
