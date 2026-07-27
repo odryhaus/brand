@@ -342,6 +342,20 @@ h1{
   gap:clamp(28px,4.5vw,72px);
   margin-top:clamp(28px,3.4vw,48px);
 }
+@media (min-width:1121px){
+  .finishingIntro{
+    grid-template-columns:minmax(0,1fr) minmax(360px,.82fr);
+    column-gap:clamp(72px,8vw,132px);
+  }
+  .workflowIntro{
+    grid-template-columns:minmax(0,660px) minmax(320px,1fr);
+    column-gap:clamp(56px,6vw,88px);
+  }
+  .workflowIntro h2{
+    font-size:clamp(38px,3.8vw,46px);
+    text-wrap:auto;
+  }
+}
 h2{
   margin:0;
   font-size:clamp(30px,4.7vw,56px);
