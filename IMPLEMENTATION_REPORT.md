@@ -1,95 +1,93 @@
-# Products Page Implementation Report
+# Products Page Refinement Report
 
-## 1. What Was Implemented
-- A bilingual Products page for .BRAND in Ukrainian and English.
-- Editorial hero based on the provided Claude design direction, using approved .BRAND copy.
-- Quick question block with Telegram, WhatsApp and Email links.
-- Client-logo section structure without fake or unapproved logos.
-- Product directory with four categories and 31 product entries.
-- Help block after the directory for products that are not listed yet.
-- Production image block using an existing real .BRAND production image.
-- Contact block and footer aligned with the current Capabilities page system.
+## 1. Blocks Removed
+- Removed the separate Quick Question block after the hero.
+- Removed the client-logo placeholder section because no approved logo assets exist.
+- Removed the extra directory heading block (`01 / Список`, `01 / Directory`).
+- Removed category description copy.
+- Removed repeated `Скоро / Soon` labels from all product rows.
 
-## 2. Files Created
+## 2. Blocks Reworked
+- Hero was rewritten and widened.
+- Product directory was rebuilt into calmer category sections.
+- CTA after the list was rewritten into a direct useful prompt.
+- Production image caption was simplified to one caption.
+- Contact block was simplified and de-tabularized.
+
+## 3. Hero Changes
+- UA hero label is `ПРОДУКЦІЯ`; right meta is `КИЇВ, УКРАЇНА — ВІД 2003`.
+- EN hero label is `PRODUCTS`; right meta is `KYIV, UKRAINE — EST. 2003`.
+- Hero lead is now a single paragraph, not two narrow paragraphs.
+- Desktop hero lead width measured in browser: `727 px`.
+- CSS max-width for hero lead: approximately `72ch`.
+
+## 4. Category Layout
+- Each category contains only a small number, a large category title and the product list.
+- Category descriptions were removed.
+- Category titles are now `h2` elements.
+- Product names are plain rows, not headings.
+- Category navigation remains compact and links to real anchors.
+
+## 5. Product Rows Without Pages
+- Product pages do not exist yet.
+- Product rows are rendered as plain text, not fake links, disabled buttons or `href="#"` anchors.
+- No arrows are shown for products without URLs.
+- No `Скоро / Soon` text remains.
+
+## 6. Horizontal Borders
+- CSS `border` occurrences before refinement: `30`.
+- CSS `border` occurrences after refinement: `28`.
+- More important visual changes:
+  - removed borders from the logo placeholder section by removing the section;
+  - removed directory heading borders by removing the heading block;
+  - removed per-row contact borders in the Products contact section;
+  - removed product list bottom borders;
+  - kept only category dividers and subtle product row dividers.
+
+## 7. Logos Section
+- The logos section is hidden completely.
+- Reason: no approved client-logo assets were found in the repository.
+- No fake clients, placeholder text or logo frames are shown.
+
+## 8. Texts Replaced
+- Replaced the hero lead in UA and EN.
+- Replaced the CTA after the product list.
+- Replaced the production photo caption text.
+- Replaced the contact heading and body copy.
+- Replaced `Рукави для коробок` with `Обичайки для коробок`.
+- Replaced `Thank you cards` with `Thank-you cards`.
+
+## 9. Animations Removed
+- No scroll reveal animation is used for individual product rows.
+- Product rows without URLs have no hover animation.
+- Existing global reduced-motion support remains in CSS.
+
+## 10. Browser QA Results
+- UA desktop 1440: one H1, 31 product rows, 4 groups, overflow `0`, no broken images.
+- EN desktop 1440: one H1, 31 product rows, 4 groups, overflow `0`, no broken images.
+- UA mobile 390: one H1, 31 product rows, 4 groups, overflow `0`, no broken images.
+- EN mobile 390: one H1, 31 product rows, 4 groups, overflow `0`, no broken images.
+- No `href="#"` links on Products pages.
+- No `Скоро / Soon` text remains.
+- No placeholder logo text remains.
+- No Quick Question block remains.
+
+## 11. Screenshot Paths
+- `reports/screenshots/products-refined/ua-desktop.png`
+- `reports/screenshots/products-refined/en-desktop.png`
+- `reports/screenshots/products-refined/ua-mobile.png`
+- `reports/screenshots/products-refined/en-mobile.png`
+
+## 12. Files Changed
 - `products.html`
 - `en/products.html`
+- `style.css`
 - `PLAN.md`
 - `IMPLEMENTATION_REPORT.md`
 - `NEXT_STEPS.md`
 
-## 3. Files Changed
-- `capabilities.html`
-- `en/capabilities.html`
-- `style.css`
-
-## 4. URLs Created
-- `/brand/products.html`
-- `/brand/en/products.html`
-
-## 5. UA / EN Structure
-- Ukrainian page uses `lang="uk"`, Ukrainian metadata, Ukrainian copy and UA active language state.
-- English page uses `lang="en"`, English metadata, English copy and EN active language state.
-- Hreflang links connect UA, EN and x-default versions.
-
-## 6. Product Data
-- Product names are rendered directly in static HTML for SEO.
-- The repository does not currently have a build system or shared template layer, so the directory is not generated from a shared JSON file.
-- The markup is grouped by category to keep future additions simple.
-
-## 7. Adding a New Product
-- Add a new `.productRow` inside the relevant `.productRows` block.
-- If a product page exists, convert the row to an `<a class="productRow" href="...">`.
-- If a product page does not exist, keep the disabled row pattern and update `NEXT_STEPS.md`.
-
-## 8. Category Anchors
-- Category navigation links point to real anchors:
-  - `#business`
-  - `#publications`
-  - `#packaging`
-  - `#merchandise`
-- No dropdown is used.
-
-## 9. Contacts Used
-- Email: `hello@bph.com.ua`
-- Phone: `+380 (44) 390 72 80`
-- Phone: `+380 (93) 390 72 80`
-- Telegram: `https://t.me/branddruk2`
-- WhatsApp: `https://wa.me/380933907280`
-- Google Maps: `https://goo.gl/maps/dHBxUJ5NEVW2axsu9`
-
-## 10. Client Logos
-- No approved client-logo assets were found in the repository.
-- A restrained logo section structure was added without fake organisation names.
-
-## 11. Production Image
-- Used `/brand/assets/images/open-space-print-production-kyiv.webp`.
-- The image is below the main directory and uses lazy loading with width and height attributes.
-
-## 12. Desktop / Mobile Checks
-- Static checks were run for UA and EN Products pages.
-- Checked:
-  - one H1 per page;
-  - 31 product rows per language;
-  - 4 category sections per language;
-  - no `href="#"` links on Products pages;
-  - valid local image references;
-  - Telegram, WhatsApp and email links present.
-
-## 13. Links and Console
-- HTML/link checks passed for Products pages.
-- Browser console screenshots could not be completed because the local environment does not currently have a Playwright browser executable installed.
-
-## 14. Known Limitations
-- Individual product pages do not exist yet, so product rows are disabled instead of linking to fake pages.
-- Client logos are not populated because approved logo assets are missing.
-- Insights and About pages are not present in the repository; on the Products pages they are shown as disabled navigation items rather than broken links.
-
-## 15. Remaining Work
-- Add real product page URLs when product pages are created.
-- Add approved client logos.
-- Run visual QA screenshots in a browser-enabled environment.
-- Final content review before production deploy.
-
-## 16. Screenshot Paths
-- Screenshots were not generated because Playwright could not launch: the Chromium executable is not installed in this local environment.
-- Intended screenshot folder: `reports/screenshots/`.
+## 13. Known Limitations
+- Product rows cannot link anywhere until individual product pages exist.
+- Client logos are not visible until approved logo assets are provided.
+- Insights and About are still disabled in Products navigation because those pages are not present in the repository.
+- Production deploy was not performed because the task explicitly says not to deploy without approval.
