@@ -1,84 +1,64 @@
-# Products Page Refinement Report
+# Products Page Final Composition Report
 
-## 1. Blocks Removed
-- Removed the separate Quick Question block after the hero.
-- Removed the client-logo placeholder section because no approved logo assets exist.
-- Removed the extra directory heading block (`01 / Список`, `01 / Directory`).
-- Removed category description copy.
-- Removed repeated `Скоро / Soon` labels from all product rows.
+## 1. Claude Composition Restored
+- Page order now follows the approved rhythm: header, hero, client strip, category navigation, product directory, consultation CTA, production image, contact and footer.
+- The product directory no longer reads as a static document: category intros, clickable product rows, arrows and hover states are back.
 
-## 2. Blocks Reworked
-- Hero was rewritten and widened.
-- Product directory was rebuilt into calmer category sections.
-- CTA after the list was rewritten into a direct useful prompt.
-- Production image caption was simplified to one caption.
-- Contact block was simplified and de-tabularized.
+## 2. Hero Width
+- Products hero starts at the same vertical rhythm as the Capabilities hero.
+- Hero lead is constrained to `68ch`, matching the production page reading width.
+- H1 remains large and editorial, with the lead as one natural paragraph.
 
-## 3. Hero Changes
-- UA hero label is `ПРОДУКЦІЯ`; right meta is `КИЇВ, УКРАЇНА — ВІД 2003`.
-- EN hero label is `PRODUCTS`; right meta is `KYIV, UKRAINE — EST. 2003`.
-- Hero lead is now a single paragraph, not two narrow paragraphs.
-- Desktop hero lead width measured in browser: `727 px`.
-- CSS max-width for hero lead: approximately `72ch`.
+## 3. Client Strip
+- Added a compact client strip after the hero.
+- Current implementation uses temporary typographic placeholders: `Клієнт 01` through `Клієнт 06` on UA and `Client 01` through `Client 06` on EN.
+- No real client names were invented because no approved client logo assets were found in the repository.
+- Replace these placeholders with approved monochrome SVG logos later.
 
-## 4. Category Layout
-- Each category contains only a small number, a large category title and the product list.
-- Category descriptions were removed.
-- Category titles are now `h2` elements.
-- Product names are plain rows, not headings.
-- Category navigation remains compact and links to real anchors.
+## 4. Logo Assets
+- No dedicated client-logo assets were found in the repository.
+- Temporary wordmarks are inline HTML text styled in CSS, so there are no logo files yet.
+- Recommended future folder: `assets/logos/`.
 
-## 5. Product Rows Without Pages
-- Product pages do not exist yet.
-- Product rows are rendered as plain text, not fake links, disabled buttons or `href="#"` anchors.
-- No arrows are shown for products without URLs.
-- No `Скоро / Soon` text remains.
+## 5. Mobile Logo Behaviour
+- The logo strip becomes a horizontal scroll row on mobile.
+- It is static, lightweight and does not use JavaScript, autoplay, carousel or marquee behaviour.
 
-## 6. Horizontal Borders
-- CSS `border` occurrences before refinement: `30`.
-- CSS `border` occurrences after refinement: `28`.
-- More important visual changes:
-  - removed borders from the logo placeholder section by removing the section;
-  - removed directory heading borders by removing the heading block;
-  - removed per-row contact borders in the Products contact section;
-  - removed product list bottom borders;
-  - kept only category dividers and subtle product row dividers.
+## 6. Category Navigation
+- Category navigation remains directly after the client strip.
+- Each item links to a real section anchor.
+- On mobile it becomes horizontal scroll with touch-friendly targets.
 
-## 7. Logos Section
-- The logos section is hidden completely.
-- Reason: no approved client-logo assets were found in the repository.
-- No fake clients, placeholder text or logo frames are shown.
+## 7. Product Rows
+- Every product row is an `<a class="productRow">`.
+- Every row has a visible `↗` arrow.
+- Every row has a hover arrow movement and a focus-visible outline.
+- No product row uses `href="#"`.
 
-## 8. Texts Replaced
-- Replaced the hero lead in UA and EN.
-- Replaced the CTA after the product list.
-- Replaced the production photo caption text.
-- Replaced the contact heading and body copy.
-- Replaced `Рукави для коробок` with `Обичайки для коробок`.
-- Replaced `Thank you cards` with `Thank-you cards`.
+## 8. Product Row Fallback
+- Because individual product pages do not exist yet, all product rows safely link to `#contact`.
+- Each row stores the product name in `data-product` for future form prefill or analytics.
+- No product rows lead to 404 pages.
 
-## 9. Animations Removed
-- No scroll reveal animation is used for individual product rows.
-- Product rows without URLs have no hover animation.
-- Existing global reduced-motion support remains in CSS.
+## 9. Category Intro Texts
+- Restored one concise intro per category in UA and EN.
+- Text width is kept readable, not squeezed into a narrow column.
 
-## 10. Browser QA Results
-- UA desktop 1440: one H1, 31 product rows, 4 groups, overflow `0`, no broken images.
-- EN desktop 1440: one H1, 31 product rows, 4 groups, overflow `0`, no broken images.
-- UA mobile 390: one H1, 31 product rows, 4 groups, overflow `0`, no broken images.
-- EN mobile 390: one H1, 31 product rows, 4 groups, overflow `0`, no broken images.
-- No `href="#"` links on Products pages.
-- No `Скоро / Soon` text remains.
-- No placeholder logo text remains.
-- No Quick Question block remains.
+## 10. CTA vs Contact
+- CTA explains that not every product fits into the menu and invites a non-standard task.
+- Contact is the final action block with contact details and large `hello@bph.com.ua`.
+- The two blocks no longer use the same headline.
 
-## 11. Screenshot Paths
-- `reports/screenshots/products-refined/ua-desktop.png`
-- `reports/screenshots/products-refined/en-desktop.png`
-- `reports/screenshots/products-refined/ua-mobile.png`
-- `reports/screenshots/products-refined/en-mobile.png`
+## 11. Production Image
+- The page keeps the real open-space production image:
+  `assets/images/open-space-print-production-kyiv.webp`
+- Caption text now positions it as production in Kyiv, not a random image insert.
 
-## 12. Files Changed
+## 12. Footer
+- Products footer now includes a large `.BRAND` wordmark before the bottom meta row.
+- Existing navigation, contact, Instagram and language switch remain.
+
+## 13. Files Changed
 - `products.html`
 - `en/products.html`
 - `style.css`
@@ -86,8 +66,12 @@
 - `IMPLEMENTATION_REPORT.md`
 - `NEXT_STEPS.md`
 
-## 13. Known Limitations
-- Product rows cannot link anywhere until individual product pages exist.
-- Client logos are not visible until approved logo assets are provided.
-- Insights and About are still disabled in Products navigation because those pages are not present in the repository.
-- Production deploy was not performed because the task explicitly says not to deploy without approval.
+## 14. Responsive Notes
+- Desktop keeps wide hero, category headers with intro text and large clickable product rows.
+- Tablet stacks category headers before the rows.
+- Mobile keeps hero and lead full-width, with horizontal scroll for client logos and category navigation.
+
+## 15. Remaining Needs
+- Replace typographic client placeholders with approved SVG logos.
+- Create individual product pages and replace fallback `#contact` links with final URLs.
+- Run final visual QA after real logos are added.

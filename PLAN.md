@@ -1,16 +1,17 @@
-# Products Page Refinement Plan
+# Products Page Final Composition Plan
 
 ## Completed Work
-- Rebuilt the Products page composition after the first implementation was rejected.
-- Simplified the page rhythm to: header, hero, product directory, CTA, production photo, contact, footer.
-- Removed interim blocks that made the page feel like a wireframe.
-- Kept the existing .BRAND header, footer, typography, container and responsive system.
+- Rebuilt the Products page rhythm around the approved Claude composition: hero, client strip, category navigation, product directory, CTA, production image, contact and footer.
+- Kept the current .BRAND global header, footer content, typography, monochrome palette and responsive system.
+- Restored interactive product rows: every product is now an anchor with a visible arrow and hover/focus states.
+- Added concise category intro text so the directory reads like a website section rather than a static table.
+- Added a temporary monochrome client strip until approved logo assets are provided.
 
 ## Architecture
 - Products remain static HTML for direct SEO visibility.
-- Product rows are plain text while product pages are not created.
-- When a product URL exists, a row can become an anchor with the same `.productRow` class and a small arrow.
-- Client logos are not rendered because no approved logo assets exist in the repository.
+- Product rows use `href="#contact"` as a safe fallback until individual product pages exist.
+- Each product row also stores its product name in `data-product` for a future form or analytics hook.
+- The client strip currently uses typographic placeholders, not fake client names.
 
 ## Files Changed
 - `products.html`
@@ -21,5 +22,5 @@
 - `NEXT_STEPS.md`
 
 ## Validation
-- Local browser QA was run through the in-app browser at 1440 px and 390 px for UA and EN.
-- Screenshots were saved to `reports/screenshots/products-refined/`.
+- Local browser QA should be run at desktop, tablet and mobile widths after every visual pass.
+- Production deploy is performed through GitHub after approval-ready changes are committed and pushed.

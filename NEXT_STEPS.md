@@ -1,7 +1,7 @@
 # Next Steps
 
-- Add approved client logo assets if the `ДРУКУЄМО ДЛЯ / WE PRINT FOR` section should appear.
-- Create product pages or provide final URLs for product rows.
-- Add additional products after the current base list is approved.
-- Review the four screenshots in `reports/screenshots/products-refined/`.
-- Deploy to production after approval.
+- Replace typographic client placeholders with approved monochrome SVG logos.
+- Add individual product pages.
+- Connect each product row to its real product URL.
+- Run final visual QA after real logos and product URLs are added.
+- Deploy after each approved implementation pass.
