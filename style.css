@@ -354,7 +354,7 @@ h3{
   display:grid;
   gap:clamp(10px,1.6vw,18px);
   align-content:start;
-  max-width:52ch;
+  max-width:48ch;
 }
 .secText p,
 .technology p,
@@ -714,17 +714,17 @@ h3{
   height:var(--logo-h,38px);
   object-fit:contain;
   object-position:center;
-  justify-self:start;
+  justify-self:center;
   opacity:.78;
 }
 .clientLogos img:nth-child(1){--logo-w:38px;--logo-h:38px}
-.clientLogos img:nth-child(2){--logo-w:30px;--logo-h:42px}
-.clientLogos img:nth-child(3){--logo-w:40px;--logo-h:40px}
-.clientLogos img:nth-child(4){--logo-w:38px;--logo-h:38px}
-.clientLogos img:nth-child(5){--logo-w:126px;--logo-h:40px}
-.clientLogos img:nth-child(6){--logo-w:128px;--logo-h:38px}
-.clientLogos img:nth-child(7){--logo-w:138px;--logo-h:34px}
-.clientLogos img:nth-child(8){--logo-w:146px;--logo-h:36px}
+.clientLogos img:nth-child(2){--logo-w:128px;--logo-h:38px}
+.clientLogos img:nth-child(3){--logo-w:30px;--logo-h:42px}
+.clientLogos img:nth-child(4){--logo-w:146px;--logo-h:36px}
+.clientLogos img:nth-child(5){--logo-w:40px;--logo-h:40px}
+.clientLogos img:nth-child(6){--logo-w:138px;--logo-h:34px}
+.clientLogos img:nth-child(7){--logo-w:126px;--logo-h:40px}
+.clientLogos img:nth-child(8){--logo-w:38px;--logo-h:38px}
 .clientLogos img:nth-child(9){--logo-w:146px;--logo-h:34px}
 .clientLogos img:nth-child(10){--logo-w:150px;--logo-h:38px}
 .quickHelpMeta{
