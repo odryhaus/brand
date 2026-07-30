@@ -689,8 +689,8 @@ h3{
   text-underline-offset:5px;
 }
 .clientStrip{
-  padding-top:clamp(18px,2.5vw,34px);
-  padding-bottom:clamp(26px,4vw,54px);
+  padding-top:clamp(22px,3vw,42px);
+  padding-bottom:clamp(34px,5vw,72px);
 }
 .clientStripLabel{
   font-family:var(--font-mono);
@@ -698,24 +698,35 @@ h3{
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--ink-label);
-  margin-bottom:clamp(20px,3vw,32px);
+  margin-bottom:clamp(22px,3vw,36px);
 }
 .clientLogos{
   display:grid;
   grid-template-columns:repeat(5,minmax(96px,1fr));
-  gap:clamp(22px,3.2vw,48px) clamp(24px,4vw,62px);
+  gap:clamp(28px,3.6vw,54px) clamp(28px,4vw,66px);
   align-items:center;
   color:#8a8780;
 }
 .clientLogos img{
   display:block;
-  width:100%;
-  max-width:168px;
-  height:34px;
+  width:var(--logo-w,150px);
+  max-width:100%;
+  height:var(--logo-h,38px);
   object-fit:contain;
-  object-position:left center;
-  opacity:.88;
+  object-position:center;
+  justify-self:start;
+  opacity:.78;
 }
+.clientLogos img:nth-child(1){--logo-w:38px;--logo-h:38px}
+.clientLogos img:nth-child(2){--logo-w:30px;--logo-h:42px}
+.clientLogos img:nth-child(3){--logo-w:40px;--logo-h:40px}
+.clientLogos img:nth-child(4){--logo-w:38px;--logo-h:38px}
+.clientLogos img:nth-child(5){--logo-w:126px;--logo-h:40px}
+.clientLogos img:nth-child(6){--logo-w:128px;--logo-h:38px}
+.clientLogos img:nth-child(7){--logo-w:138px;--logo-h:34px}
+.clientLogos img:nth-child(8){--logo-w:146px;--logo-h:36px}
+.clientLogos img:nth-child(9){--logo-w:146px;--logo-h:34px}
+.clientLogos img:nth-child(10){--logo-w:150px;--logo-h:38px}
 .quickHelpMeta{
   font-family:var(--font-mono);
   font-size:11px;
@@ -981,14 +992,15 @@ a.productRow:focus-visible{
   .clientLogos{
     display:flex;
     overflow-x:auto;
-    gap:34px;
+    gap:clamp(32px,9vw,46px);
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
+    padding-bottom:2px;
   }
   .clientLogos img{
     flex:0 0 auto;
-    width:148px;
-    height:30px;
+    width:var(--logo-w,136px);
+    height:var(--logo-h,34px);
   }
   .productGroupHeader{
     grid-template-columns:1fr;
