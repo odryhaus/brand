@@ -330,27 +330,14 @@ h1{
 .sectionRule{height:1px;background:var(--line)}
 .secGrid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:clamp(28px,4.5vw,72px);
+  grid-template-columns:minmax(0,1fr) minmax(320px,.82fr);
+  gap:clamp(44px,5vw,84px);
   margin-top:clamp(28px,3.4vw,48px);
-}
-@media (min-width:1121px){
-  .finishingIntro{
-    grid-template-columns:minmax(0,1fr) minmax(360px,.82fr);
-    column-gap:clamp(72px,8vw,132px);
-  }
-  .workflowIntro{
-    grid-template-columns:minmax(0,660px) minmax(320px,1fr);
-    column-gap:clamp(56px,6vw,88px);
-  }
-  .workflowIntro h2{
-    font-size:clamp(38px,3.8vw,46px);
-    text-wrap:auto;
-  }
+  align-items:start;
 }
 h2{
   margin:0;
-  font-size:clamp(30px,4.7vw,56px);
+  font-size:clamp(30px,4.45vw,54px);
   line-height:.98;
   letter-spacing:-.025em;
   font-weight:700;
@@ -367,6 +354,7 @@ h3{
   display:grid;
   gap:clamp(10px,1.6vw,18px);
   align-content:start;
+  max-width:52ch;
 }
 .secText p,
 .technology p,
@@ -965,6 +953,7 @@ a.productRow:focus-visible{
   .contentGrid{grid-template-columns:1fr}
   .toc{display:none}
   .sectionMeta{padding-top:54px}
+  .secGrid{grid-template-columns:1fr;gap:clamp(18px,4vw,30px)}
   .technologyLayout{grid-template-columns:1fr}
   .technologyLayout > div:last-child{grid-column:auto;margin-top:0}
   .contactLine{grid-template-columns:1fr;gap:8px}
@@ -1013,6 +1002,7 @@ a.productRow:focus-visible{
 @media (min-width:861px) and (max-width:1120px){
   .contentGrid{grid-template-columns:1fr}
   .toc{display:none}
+  .secGrid{grid-template-columns:minmax(0,1fr) minmax(320px,.86fr)}
   .technologyLayout{
     grid-template-columns:minmax(240px,.86fr) minmax(300px,1fr);
   }
