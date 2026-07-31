@@ -663,6 +663,14 @@ h3{
 .productsPage{
   --paper:#f6f5f2;
   --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  background:#fff;
+}
+.productsPage .siteHeader{
+  background:rgba(255,255,255,.94);
+  border-bottom:1px solid rgba(22,20,15,.10);
+}
+.productsPage .mobileNav{
+  background:rgba(255,255,255,.96);
 }
 .productsHero{
   padding-top:clamp(64px,9vw,120px);
@@ -822,7 +830,7 @@ h3{
   border-top:1px solid rgba(22,20,15,.16);
   border-bottom:1px solid rgba(22,20,15,.08);
   margin-bottom:0;
-  background:rgba(246,245,242,.94);
+  background:rgba(255,255,255,.94);
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
 }
@@ -876,20 +884,18 @@ h3{
   transform:translateY(3px);
 }
 .productGroup{
-  scroll-margin-top:calc(var(--headerH) + 42px);
+  scroll-margin-top:calc(var(--headerH) + 148px);
   margin-top:0;
   padding-top:clamp(56px,7vw,96px);
   padding-bottom:clamp(18px,3vw,34px);
-}
-.productGroup:nth-of-type(odd){
   background:#fff;
   box-shadow:0 0 0 100vmax #fff;
   clip-path:inset(0 -100vmax);
 }
-.productGroup:nth-of-type(even){
+.productGroup:nth-of-type(1),
+.productGroup:nth-of-type(3){
   background:var(--paper);
   box-shadow:0 0 0 100vmax var(--paper);
-  clip-path:inset(0 -100vmax);
 }
 .categoryNav + .productGroup{
   margin-top:0;
@@ -1024,14 +1030,92 @@ a.productRow:focus-visible{
   text-transform:uppercase;
   color:var(--ink-label);
 }
+.productStats{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:clamp(30px,4vw,52px) var(--gutter) clamp(42px,6vw,76px);
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(18px,3vw,44px);
+  border-top:1px solid var(--line);
+}
+.productStat{
+  padding-top:clamp(16px,2vw,24px);
+  border-top:1px solid var(--line-soft);
+}
+.productStat span{
+  display:block;
+  margin-bottom:clamp(12px,1.8vw,22px);
+  font-size:clamp(28px,4.8vw,64px);
+  line-height:.9;
+  letter-spacing:-.04em;
+  font-weight:700;
+}
+.productStat p{
+  margin:0;
+  max-width:22ch;
+  color:var(--ink-62);
+  font-size:14px;
+  line-height:1.55;
+}
+.howWorks{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:clamp(64px,8vw,112px) var(--gutter);
+  background:var(--paper);
+  box-shadow:0 0 0 100vmax var(--paper);
+  clip-path:inset(0 -100vmax);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.howWorksGrid{
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);
+  gap:clamp(34px,6vw,96px);
+  align-items:start;
+  margin-top:clamp(22px,3vw,42px);
+}
+.howWorks h2{
+  margin:0;
+  max-width:13ch;
+  font-size:clamp(34px,5.4vw,72px);
+  line-height:.96;
+  letter-spacing:-.03em;
+  text-wrap:balance;
+}
+.howSteps{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(26px,3.6vw,48px) clamp(28px,4vw,64px);
+}
+.howSteps div{
+  padding-top:clamp(16px,2vw,24px);
+  border-top:1px solid var(--line-soft);
+}
+.howSteps span{
+  display:block;
+  margin-bottom:clamp(16px,2vw,24px);
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--ink-label);
+}
+.howSteps h3{
+  margin:0 0 10px;
+  font-size:clamp(20px,2vw,28px);
+  line-height:1.1;
+  letter-spacing:-.02em;
+}
+.howSteps p{
+  margin:0;
+  color:var(--ink-62);
+  font-size:15px;
+  line-height:1.62;
+}
 .productsContact{
   scroll-margin-top:calc(var(--headerH) + 48px);
   padding-top:clamp(64px,8.5vw,112px);
   padding-bottom:clamp(56px,8vw,110px);
   border-top:1px solid var(--line);
-  background:#fff;
-  box-shadow:0 0 0 100vmax #fff;
-  clip-path:inset(0 -100vmax);
 }
 .productsContact .contactPanel{
   margin-top:clamp(36px,5vw,64px);
@@ -1118,6 +1202,17 @@ a.productRow:focus-visible{
     align-items:start;
     padding-bottom:clamp(18px,5vw,28px);
   }
+  .productStats{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .howWorksGrid,
+  .howSteps{
+    grid-template-columns:1fr;
+  }
+  .howWorks{
+    padding-top:clamp(46px,12vw,70px);
+    padding-bottom:clamp(46px,12vw,70px);
+  }
   .productsHero .heroCopy{
     display:block;
   }
@@ -1165,6 +1260,12 @@ a.productRow:focus-visible{
   }
   .productRow > span:last-child{
     font-size:14px;
+  }
+  .productStats{
+    grid-template-columns:1fr;
+  }
+  .productStat span{
+    font-size:clamp(34px,12vw,52px);
   }
 }
 
