@@ -651,13 +651,13 @@ h3{
 .footerLink{color:var(--ink-62);text-decoration:none}
 
 .capabilitiesPage{
-  background:#f6f5f1;
+  background:#fff;
 }
 .capabilitiesPage .siteHeader{
-  background:rgba(246,245,241,.88);
+  background:rgba(255,255,255,.92);
 }
 .capabilitiesPage .mobileNav{
-  background:rgba(246,245,241,.96);
+  background:rgba(255,255,255,.96);
 }
 .capabilitiesPage .hero{
   padding-top:clamp(44px,6vw,82px);
@@ -679,7 +679,7 @@ h3{
 }
 .capabilitiesPage .heroCopy{
   margin-top:clamp(22px,3vw,34px);
-  max-width:58ch;
+  max-width:72ch;
 }
 .capabilitiesPage .heroCopy p{
   font-size:clamp(15px,1.35vw,18px);
@@ -697,13 +697,14 @@ h3{
 }
 .capabilitiesPage .factBlock li{
   display:block;
-  padding:6px 13px 7px;
+  padding:7px 14px 8px;
   border:1px solid rgba(22,20,15,.13);
   border-radius:999px;
   color:var(--ink-62);
   font-size:12px;
   line-height:1.25;
   font-weight:500;
+  white-space:nowrap;
 }
 .capabilitiesPage .factBlock li::before{
   content:none;
@@ -737,31 +738,51 @@ h3{
   color:rgba(255,255,255,.62);
   background:linear-gradient(to top,rgba(8,8,8,.48),rgba(8,8,8,0));
 }
-.capabilitiesPage .clientStrip{
-  border-top:0;
+.workflowStrip{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 var(--gutter);
+  display:grid;
+  grid-template-columns:minmax(0,180px) minmax(0,1fr);
+  align-items:stretch;
+  border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  padding-top:0;
-  padding-bottom:0;
-  overflow:hidden;
 }
-.capabilitiesPage .clientStripLabel{
+.workflowStripLabel{
   margin:0;
-  padding:16px clamp(20px,3vw,44px) 16px 0;
+  padding:18px clamp(20px,3vw,44px) 18px 0;
   border-right:1px solid var(--line);
   white-space:nowrap;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-label);
 }
-.capabilitiesPage .clientLogos{
-  min-width:0;
-  max-width:100%;
-  overflow-x:auto;
-  padding:14px 0 14px clamp(20px,3vw,44px);
-  scrollbar-width:none;
+.workflowStripList{
+  list-style:none;
+  margin:0;
+  padding:0 0 0 clamp(20px,3vw,44px);
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  counter-reset:workflowStrip;
 }
-.capabilitiesPage .clientLogos::-webkit-scrollbar{display:none}
-.capabilitiesPage .clientLogos img{
-  width:auto;
-  height:22px;
-  opacity:.3;
+.workflowStripList li{
+  counter-increment:workflowStrip;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:56px;
+  padding:14px clamp(10px,1.5vw,20px) 14px 0;
+  color:var(--ink-72);
+  font-size:14px;
+  line-height:1.25;
+}
+.workflowStripList li::before{
+  content:counter(workflowStrip, decimal-leading-zero);
+  font-family:var(--font-mono);
+  font-size:10px;
+  color:var(--ink-40);
 }
 .tocBarWrap{
   display:none;
@@ -854,28 +875,21 @@ h3{
   margin-top:clamp(28px,4vw,44px);
 }
 .capabilitiesPage .technology{
-  padding:clamp(34px,5vw,58px) 0;
+  padding:clamp(34px,4.8vw,58px) 0;
   border-top:1px solid var(--line);
 }
 .capabilitiesPage .technology:first-child{
   border-top:0;
 }
 .capabilitiesPage .technologyLayout{
-  grid-template-columns:minmax(0,1.05fr) minmax(260px,.56fr);
+  grid-template-columns:minmax(0,1fr) minmax(300px,.62fr);
   grid-template-areas:
-    "text image"
-    "caps image";
-  gap:clamp(18px,3vw,42px) clamp(32px,5vw,72px);
+    "text caps";
+  gap:clamp(34px,5vw,76px);
+  align-items:start;
 }
 .capabilitiesPage .technology .figure{
-  margin-top:0;
-  grid-area:image;
-  align-self:start;
-}
-.capabilitiesPage .technology .productionImage{
-  aspect-ratio:4/3;
-  max-height:260px;
-  object-position:center;
+  display:none;
 }
 .capabilitiesPage .technologyLayout > div:nth-of-type(1){
   grid-area:text;
@@ -895,8 +909,8 @@ h3{
   color:var(--ink-42);
 }
 .capabilitiesPage .techTitle{
-  font-size:clamp(32px,4.6vw,64px);
-  line-height:.96;
+  font-size:clamp(34px,4.4vw,58px);
+  line-height:.98;
   letter-spacing:-.04em;
 }
 .capabilitiesPage .techHeading p{
@@ -906,7 +920,8 @@ h3{
   color:var(--ink-42);
 }
 .capabilitiesPage .technology .techText{
-  margin-top:clamp(18px,2.5vw,28px);
+  margin-top:clamp(16px,2vw,24px);
+  max-width:60ch;
 }
 .capabilitiesPage .specList{
   display:grid;
@@ -916,10 +931,11 @@ h3{
   counter-reset:none;
 }
 .capabilitiesPage .technology .specList{
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:1fr;
   margin-top:0;
-  gap:7px;
+  gap:0;
+  border-top:1px solid var(--line);
 }
 .capabilitiesPage .specList li{
   display:block;
@@ -933,11 +949,14 @@ h3{
   line-height:1.25;
 }
 .capabilitiesPage .technology .specList li{
-  width:auto;
-  border:1px solid rgba(22,20,15,.13);
-  border-radius:999px;
-  padding:5px 12px;
+  width:100%;
+  border:0;
+  border-bottom:1px solid var(--line-soft);
+  border-radius:0;
+  padding:10px 0;
   position:static;
+  color:var(--ink-72);
+  font-size:14px;
 }
 .capabilitiesPage .technology .specList li::before{
   content:none;
@@ -951,7 +970,7 @@ h3{
   padding-left:13px;
 }
 .capabilitiesPage .technology .specList li:hover{
-  padding-left:12px;
+  padding-left:0;
 }
 .capabilitiesPage .listLabel{
   margin-bottom:10px;
@@ -1657,7 +1676,7 @@ a.productRow:focus-visible{
     position:sticky;
     top:var(--headerH);
     z-index:50;
-    background:rgba(246,245,241,.96);
+    background:rgba(255,255,255,.96);
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
     border-bottom:1px solid var(--line);
@@ -1722,15 +1741,21 @@ a.productRow:focus-visible{
   .capabilitiesPage .hero > .figure .productionImage{
     height:clamp(280px,72vw,460px);
   }
-  .capabilitiesPage .clientStrip{
-    display:block;
+  .workflowStrip{
+    grid-template-columns:1fr;
   }
-  .capabilitiesPage .clientStripLabel{
+  .workflowStripLabel{
     border-right:0;
-    padding-bottom:4px;
+    padding:14px 0 4px;
   }
-  .capabilitiesPage .clientLogos{
+  .workflowStripList{
     padding-left:0;
+    grid-template-columns:1fr 1fr;
+  }
+  .workflowStripList li{
+    min-height:42px;
+    padding-top:10px;
+    padding-bottom:10px;
   }
   .capabilitiesPage .sec{
     padding:clamp(42px,12vw,64px) 0;
@@ -1748,14 +1773,10 @@ a.productRow:focus-visible{
     grid-template-columns:1fr;
     grid-template-areas:
       "text"
-      "caps"
-      "image";
+      "caps";
   }
   .capabilitiesPage .technologyLayout > div:last-child{
     margin-top:0;
-  }
-  .capabilitiesPage .technology .productionImage{
-    aspect-ratio:4/3;
   }
   .capabilitiesPage .capabilityGroups{
     grid-template-columns:1fr;
@@ -1807,6 +1828,7 @@ a.productRow:focus-visible{
   }
   .capabilitiesPage .factBlock li{
     font-size:11px;
+    white-space:normal;
   }
   .capabilitiesPage .specList{
     display:flex;
