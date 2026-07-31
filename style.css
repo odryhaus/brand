@@ -668,10 +668,14 @@ h3{
   color:var(--ink-42);
 }
 .capabilitiesPage h1{
-  max-width:19ch;
+  max-width:20ch;
   font-size:clamp(46px,7.8vw,104px);
   line-height:.94;
   letter-spacing:-.04em;
+}
+.capabilitiesPage h1 em{
+  font-style:italic;
+  font-weight:300;
 }
 .capabilitiesPage .heroCopy{
   margin-top:clamp(22px,3vw,34px);
@@ -857,14 +861,28 @@ h3{
   border-top:0;
 }
 .capabilitiesPage .technologyLayout{
-  grid-template-columns:minmax(180px,.68fr) minmax(280px,1.12fr) minmax(260px,.82fr);
-  gap:clamp(24px,3.6vw,54px);
+  grid-template-columns:minmax(0,1.05fr) minmax(260px,.56fr);
+  grid-template-areas:
+    "text image"
+    "caps image";
+  gap:clamp(18px,3vw,42px) clamp(32px,5vw,72px);
 }
 .capabilitiesPage .technology .figure{
   margin-top:0;
+  grid-area:image;
+  align-self:start;
 }
 .capabilitiesPage .technology .productionImage{
-  aspect-ratio:4/5;
+  aspect-ratio:4/3;
+  max-height:260px;
+  object-position:center;
+}
+.capabilitiesPage .technologyLayout > div:nth-of-type(1){
+  grid-area:text;
+}
+.capabilitiesPage .technologyLayout > div:last-child{
+  grid-area:caps;
+  margin-top:clamp(2px,.8vw,10px);
 }
 .capabilitiesPage .techHeading{
   display:flex;
@@ -877,7 +895,7 @@ h3{
   color:var(--ink-42);
 }
 .capabilitiesPage .techTitle{
-  font-size:clamp(30px,4.3vw,58px);
+  font-size:clamp(32px,4.6vw,64px);
   line-height:.96;
   letter-spacing:-.04em;
 }
@@ -898,9 +916,10 @@ h3{
   counter-reset:none;
 }
 .capabilitiesPage .technology .specList{
-  grid-template-columns:1fr;
+  display:flex;
+  flex-wrap:wrap;
   margin-top:0;
-  gap:6px;
+  gap:7px;
 }
 .capabilitiesPage .specList li{
   display:block;
@@ -914,19 +933,14 @@ h3{
   line-height:1.25;
 }
 .capabilitiesPage .technology .specList li{
-  width:100%;
-  border:0;
-  border-radius:0;
-  padding:0 0 0 14px;
-  position:relative;
+  width:auto;
+  border:1px solid rgba(22,20,15,.13);
+  border-radius:999px;
+  padding:5px 12px;
+  position:static;
 }
 .capabilitiesPage .technology .specList li::before{
-  content:"—";
-  position:absolute;
-  left:0;
-  font-family:var(--font-sans);
-  font-size:13px;
-  color:rgba(22,20,15,.22);
+  content:none;
 }
 .capabilitiesPage .specList li::before{
   content:none;
@@ -937,7 +951,7 @@ h3{
   padding-left:13px;
 }
 .capabilitiesPage .technology .specList li:hover{
-  padding-left:14px;
+  padding-left:12px;
 }
 .capabilitiesPage .listLabel{
   margin-bottom:10px;
@@ -1732,9 +1746,12 @@ a.productRow:focus-visible{
   }
   .capabilitiesPage .technologyLayout{
     grid-template-columns:1fr;
+    grid-template-areas:
+      "text"
+      "caps"
+      "image";
   }
   .capabilitiesPage .technologyLayout > div:last-child{
-    grid-column:auto;
     margin-top:0;
   }
   .capabilitiesPage .technology .productionImage{
