@@ -865,6 +865,10 @@ h3{
 .capabilitiesPage .mediaGrid{
   gap:clamp(10px,1.5vw,16px);
 }
+.capabilitiesPage #facility .mediaGrid{
+  grid-template-columns:minmax(0,min(620px,100%));
+  justify-content:start;
+}
 .capabilitiesPage .productionImage{
   border-radius:4px;
 }
@@ -889,7 +893,13 @@ h3{
   align-items:start;
 }
 .capabilitiesPage .technology .figure{
-  display:none;
+  display:block;
+  margin-top:clamp(22px,2.8vw,34px);
+}
+.capabilitiesPage .technology .productionImage{
+  aspect-ratio:4/5;
+  max-height:420px;
+  object-position:center;
 }
 .capabilitiesPage .technologyLayout > div:nth-of-type(1){
   grid-area:text;
